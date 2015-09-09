@@ -1,0 +1,40 @@
+{
+  "name": "CNode-React",
+  "description": "CNode React Server Render",
+  "version": "0.0.1",
+  "author": {
+    "name": "yuyangyang"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yuyang041060120/CNode-React"
+  },
+  "devDependencies": {
+  },
+  "keywords": [
+    "cnode",
+    "react",
+    "react router"
+  ],
+  "dependencies": {
+    "webpack": "~1.9.5",
+    "babel-loader": "~5.0.0",
+    "json-loader": "~0.5.2",
+    "grunt-contrib-concat": "~0.5.1",
+    "grunt-webpack": "~1.0.11",
+    "express": "~4.12.4",
+    "express-mapping": "~1.0.1",
+    "body-parser": "~1.11.0",
+    "method-override": "~2.3.1",
+    "express-session": "~1.10.4",
+    "cookie-parser": "~1.3.3",
+    "query-string": "~2.4.1",
+    "react-engine": "~1.7.0",
+    "node-jsx": "~0.13.3",
+    "superagent": "~1.3.0",
+    "react": "~0.13.3",
+    "react-router": "~0.13.3",
+    "jquery": "~2.1.4",
+    "lodash": "~3.10.1"
+  }
+}
