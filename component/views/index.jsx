@@ -97,7 +97,7 @@ module.exports = React.createClass({
                         </li>
                     </ul>
 
-                    {this.state.data.map(function (item) {
+                    {this.state.data.map((item) => {
                         return (
                             <div className="media">
                                 <div className="media-left">
@@ -119,8 +119,8 @@ module.exports = React.createClass({
                                     </p>
                                 </div>
                             </div>
-                        )
-                    }.bind(this))}
+                        )}
+                    )}
 
                 </div>
             </div>

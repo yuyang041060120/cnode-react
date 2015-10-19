@@ -44,7 +44,7 @@ module.exports = React.createClass({
                     <div className="page-header">
                         <h4>回复({topic.reply_count})</h4>
                     </div>
-                    {topic.replies.length ? topic.replies.map(function (reply, index) {
+                    {topic.replies.length ? topic.replies.map((reply, index) => {
                         return (
                             <div className="media">
                                 <div className="media-left">

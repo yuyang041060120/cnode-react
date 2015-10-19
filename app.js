@@ -6,6 +6,7 @@ var express = require('express'),
     session = require('express-session'),
     path = require('path'),
     filter = require('./lib/filter'),
+    config = require('./webpack.config'),
     app = express();
 
 var PORT = 4000;
@@ -38,5 +39,5 @@ app.use(filter);
 app.use(router('routes'));
 
 app.listen(PORT, function () {
-    console.log('The server is running at port:' + PORT);
+    console.log('The server is running at port:' + config.prot);
 });
