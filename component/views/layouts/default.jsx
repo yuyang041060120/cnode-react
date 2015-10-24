@@ -1,17 +1,16 @@
-var React = require('react');
-var constants=require('../../../lib/constants');
+import React     from 'react';
+import Constants from '../../../lib/constants';
+import Footer    from '../partials/footer.jsx';
 
-var Footer=require('../partials/footer.jsx');
-
-module.exports = React.createClass({
-    render: function render() {
+export default class Default extends React.Component{
+    render() {
         return (
             <html>
             <head>
                 <title>{this.props.title}</title>
                 <meta charSet='utf-8'/>
-                <meta name="keywords" content={constants.promotion.keywords}/>
-                <meta name="description" content={constants.promotion.description}/>
+                <meta name="keywords" content={Constants.promotion.keywords}/>
+                <meta name="description" content={Constants.promotion.description}/>
                 <link rel="icon" href="//dn-cnodestatic.qbox.me/public/images/cnode_icon_32.png" type="image/x-icon"/>
                 <link rel="stylesheet" href="/css/font-awesome.min.css"/>
                 <link rel="stylesheet" href="/css/bootstrap.css"/>
@@ -26,4 +25,4 @@ module.exports = React.createClass({
             </html>
         );
     }
-});
+}

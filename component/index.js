@@ -1,9 +1,9 @@
-var React = require('react');
-var Router = require('react-router');
-var $ = require('jquery');
-var Routes = require('./routes.jsx');
+import React  from  'react';
+import Router from 'react-router';
+import $      from 'jquery';
+import Routes from './routes.jsx';
 
-var CLIENT_VARIABLENAME = '__REACT_ENGINE__';
+const CLIENT_VARIABLENAME = '__REACT_ENGINE__';
 
 var _window;
 var _document;
@@ -26,6 +26,5 @@ document.addEventListener('DOMContentLoaded', function onLoad() {
                 React.render(componentInstance, _document);
             });
         }
-
     });
 });

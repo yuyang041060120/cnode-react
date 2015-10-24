@@ -1,19 +1,20 @@
-var React = require('react');
-var Router = require('react-router');
-var Navbar = require('../partials/navbar.jsx');
+import React  from 'react';
+import {Link} from 'react-router';
+import Navbar from '../partials/navbar.jsx';
+import utils  from '../../component/utils';
 
+export default class Detail extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {tab: 'message'}
+    }
 
-var utils = require('../../component/utils');
-var Link = Router.Link;
-
-module.exports = React.createClass({
-    getInitialState: function () {
-        return {tab: 'message'};
-    },
-    handleClick: function (tab) {
+    handleClick(tab) {
         this.setState({tab: tab});
-    },
-    render: function () {
+    }
+
+
+    render() {
         var tab = this.state.tab;
         var user = this.props.data;
 
@@ -49,62 +50,61 @@ module.exports = React.createClass({
                         </div>
 
                         {user.githubUsername ?
-                            <div>
-                                <i className="fa fa-github"></i>
-                                <a className="mg-l-5" href={'https://github.com/'+user.githubUsername}
-                                   target="_blank">@{user.githubUsername}</a>
-                            </div>
+                        <div>
+                            <i className="fa fa-github"></i>
+                            <a className="mg-l-5" href={'https://github.com/'+user.githubUsername}
+                               target="_blank">@{user.githubUsername}</a>
+                        </div>
                             : ''
-                        }
+                            }
                     </div>
                     <div className="topic-list" style={{display:tab!=='recentTopic'?'none':'block'}}>
                         {user.recent_topics.map(function (item) {
                             return (
-                                <div className="media">
-                                    <div className="media-left">
-                                        <Link to="user-detail" params={{loginname:item.author.loginname}}>
-                                            <img className="media-object" src={item.author.avatar_url} width="40"
-                                                 heigth="40" title={item.author.loginname}/>
-                                        </Link>
-                                    </div>
-                                    <div className="media-body">
-                                        <h4 className="media-heading">
-                                            <Link to="topic-detail" params={{topicId:item.id}}>{item.title}</Link>
-                                        </h4>
+                            <div className="media">
+                                <div className="media-left">
+                                    <Link to="user-detail" params={{loginname:item.author.loginname}}>
+                                        <img className="media-object" src={item.author.avatar_url} width="40"
+                                             heigth="40" title={item.author.loginname}/>
+                                    </Link>
+                                </div>
+                                <div className="media-body">
+                                    <h4 className="media-heading">
+                                        <Link to="topic-detail" params={{topicId:item.id}}>{item.title}</Link>
+                                    </h4>
 
-                                        <div className="media-count">
-                                            <i className="fa fa-calendar"></i>最后回复于{utils.getPubDate(item.last_reply_at)}
-                                        </div>
+                                    <div className="media-count">
+                                        <i className="fa fa-calendar"></i>最后回复于{utils.getPubDate(item.last_reply_at)}
                                     </div>
                                 </div>
-                            )
-                        })}
+                            </div>
+                                )
+                            })}
                     </div>
                     <div className="topic-list" style={{display:tab!=='recentJoin'?'none':'block'}}>
                         {user.recent_replies.map(function (item) {
                             return (
-                                <div className="media">
-                                    <div className="media-left">
-                                        <Link to="user-detail" params={{loginname:item.author.loginname}}>
-                                            <img className="media-object" src={item.author.avatar_url} width="40"
-                                                 heigth="40" title={item.author.loginname}/>
-                                        </Link>
-                                    </div>
-                                    <div className="media-body">
-                                        <h4 className="media-heading">
-                                            <Link to="topic-detail" params={{topicId:item.id}}>{item.title}</Link>
-                                        </h4>
-                                        <div className="media-count">
-                                            <i className="fa fa-calendar"></i>最后回复于{utils.getPubDate(item.last_reply_at)}
-                                        </div>
+                            <div className="media">
+                                <div className="media-left">
+                                    <Link to="user-detail" params={{loginname:item.author.loginname}}>
+                                        <img className="media-object" src={item.author.avatar_url} width="40"
+                                             heigth="40" title={item.author.loginname}/>
+                                    </Link>
+                                </div>
+                                <div className="media-body">
+                                    <h4 className="media-heading">
+                                        <Link to="topic-detail" params={{topicId:item.id}}>{item.title}</Link>
+                                    </h4>
+                                    <div className="media-count">
+                                        <i className="fa fa-calendar"></i>最后回复于{utils.getPubDate(item.last_reply_at)}
                                     </div>
                                 </div>
-                            )
-                        })}
+                            </div>
+                                )
+                            })}
                     </div>
                 </div>
             </div>
         )
     }
-})
-;
+}

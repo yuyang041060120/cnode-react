@@ -1,31 +1,27 @@
-var React = require('react');
-var Router = require('react-router');
+import React   from 'react';
+import {Link}  from 'react-router';
+import navJson from './navbar.json';
 
-var Link = Router.Link;
-
-var navJson = require('./navbar.json');
-
-
-var NavItem = React.createClass({
-    render: function () {
+class NavItem extends React.Component{
+    render () {
         var nav = this.props.nav;
         return (
             <li><Link to={nav.to}>{nav.text}</Link></li>
         )
     }
-});
+}
 
 
-module.exports = React.createClass({
-    render: function () {
+export default class Navbar extends React.Component{
+    render () {
         return (
             <nav className="navbar navbar-default navbar-fixed-top">
                 <div className="container">
                     <div className="navbar-header">
-                        <Link className="navbar-brand" to="index">React-CNode</Link>
+                        <Link className="navbar-brand" to="index">CNode-React</Link>
                     </div>
 
-                    <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <div className="collapse navbar-collapse">
                         <ul className="nav navbar-nav">
                             {navJson.map(function (nav, index) {
                                 return <NavItem nav={nav} key={index}/>
@@ -36,7 +32,7 @@ module.exports = React.createClass({
             </nav>
         )
     }
-});
+}
 
 
 

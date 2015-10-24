@@ -1,13 +1,10 @@
-var React = require('react');
-var Router = require('react-router');
-
-var Layout = require('./views/layouts/default.jsx');
-
-var RouteHandler = Router.RouteHandler;
+import React          from 'react';
+import {RouteHandler} from 'react-router';
+import Layout from './views/layouts/default.jsx';
 
 
-module.exports = React.createClass({
-    render: function () {
+export default class App extends React.Component{
+    render () {
         var data = this.props.data;
         return (
             <Layout title={this.props.title}>
@@ -15,4 +12,4 @@ module.exports = React.createClass({
             </Layout>
         )
     }
-});
+}

@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     getPubDate: function (dateTimeStamp) {
         var minute = 1000 * 60;
         var hour = minute * 60;
@@ -37,4 +37,4 @@ module.exports = {
             return "刚刚";
         }
     }
-};
+}

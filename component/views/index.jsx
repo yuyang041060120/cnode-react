@@ -1,15 +1,12 @@
-var React = require('react');
-var Router = require('react-router');
-var $ = require('jquery');
-var Navbar = require('./partials/navbar.jsx');
-var queryString = require('query-string');
-var utils=require('../component/utils');
+import React       from 'react';
+import {Link}      from 'react-router';
+import $           from 'jquery';
+import queryString from 'query-string';
+import Navbar      from './partials/navbar.jsx';
+import utils       from '../component/utils';
 
-var Link = Router.Link;
-
-
-var Label = React.createClass({
-    render: function () {
+class Label extends React.Component {
+    render() {
         var tab = this.props.tab;
         var data = this.props.data;
 
@@ -37,22 +34,25 @@ var Label = React.createClass({
 
         return null;
     }
-});
+}
 
-module.exports = React.createClass({
-    getInitialState: function () {
-        return {
+export default class Index extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
             data: this.props.data || [],
             page: 1
         }
-    },
-    componentWillReceiveProps: function (nextProps) {
+    }
+
+    componentWillReceiveProps(nextProps) {
         this.setState({
             data: nextProps.data,
             page: 1
         });
-    },
-    componentDidMount: function () {
+    }
+
+    componentDidMount() {
         var loading = false;
         $(window).on('scroll', function () {
             var fromBottom = $(document).height() - $(window).height() - $(window).scrollTop();
@@ -71,8 +71,9 @@ module.exports = React.createClass({
                 }.bind(this));
             }
         }.bind(this));
-    },
-    render: function () {
+    }
+
+    render() {
         var tab = this.props.query.tab;
         return (
             <div className="index">
@@ -99,31 +100,31 @@ module.exports = React.createClass({
 
                     {this.state.data.map(function (item) {
                         return (
-                            <div className="media">
-                                <div className="media-left">
-                                    <Link to="user-detail" params={{loginname:item.author.loginname}}>
-                                        <img className="media-object" src={item.author.avatar_url} width="40"
-                                             heigth="40" title={item.author.loginname}/>
-                                    </Link>
-                                </div>
-                                <div className="media-body">
-                                    <h4 className="media-heading">
-                                        <Label tab={tab} data={item}/>
-                                        <Link to="topic-detail" params={{topicId:item.id}}>{item.title}</Link>
-                                    </h4>
-
-                                    <p className="media-count">
-                                        <i className="fa fa-hand-pointer-o"></i>{item.visit_count}
-                                        <i className="fa fa-comment mg-l-5"></i>{item.reply_count}
-                                        <i className="fa fa-calendar mg-l-5"></i>发表于{utils.getPubDate(item.create_at)}
-                                    </p>
-                                </div>
+                        <div className="media">
+                            <div className="media-left">
+                                <Link to="user-detail" params={{loginname:item.author.loginname}}>
+                                    <img className="media-object" src={item.author.avatar_url} width="40"
+                                         heigth="40" title={item.author.loginname}/>
+                                </Link>
                             </div>
-                        )
-                    }.bind(this))}
+                            <div className="media-body">
+                                <h4 className="media-heading">
+                                    <Label tab={tab} data={item}/>
+                                    <Link to="topic-detail" params={{topicId:item.id}}>{item.title}</Link>
+                                </h4>
+
+                                <p className="media-count">
+                                    <i className="fa fa-hand-pointer-o"></i>{item.visit_count}
+                                    <i className="fa fa-comment mg-l-5"></i>{item.reply_count}
+                                    <i className="fa fa-calendar mg-l-5"></i>发表于{utils.getPubDate(item.create_at)}
+                                </p>
+                            </div>
+                        </div>
+                            )
+                        }.bind(this))}
 
                 </div>
             </div>
         )
     }
-});
+}
