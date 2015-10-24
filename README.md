@@ -1,19 +1,19 @@
 # CNode-React
 CNode React Server Render
-#¸ÅÊö#
-CNodeÉçÇøReact·şÎñÆ÷¶ËäÖÈ¾
+#æ¦‚è¿°#
+CNodeç¤¾åŒºReactæœåŠ¡å™¨ç«¯æ¸²æŸ“
 #Run#
- 1. clone´úÂëµ½±¾µØ
+ 1. cloneä»£ç åˆ°æœ¬åœ°
  2. cd ${project directory}
  3. npm install
  4. grunt 
- 5. node app
+ 5. node bin/www
  6. http://localhost:4000
  
-#¹¦ÄÜ#
-ÔİÊ±Ö»ÓĞÈı¸ö²é¿´Ò³Ãæ£¬ÓÉÓÚÊ×Ò³»ñÈ¡²»µ½·ÖÒ³ĞÅÏ¢£¬²ÉÓÃµÄÊÇ¹ö¶¯¼ÓÔØ£¬Õâ¸ö¶ÔSPAÀ´Ëµ±È½Ï¿Ó£¬Ã¿´Î»ØÍË¶¼µÃ¹ö°ëÌì£¬F
+#åŠŸèƒ½#
+æš‚æ—¶åªæœ‰ä¸‰ä¸ªæŸ¥çœ‹é¡µé¢ï¼Œç”±äºé¦–é¡µè·å–ä¸åˆ°åˆ†é¡µä¿¡æ¯ï¼Œé‡‡ç”¨çš„æ˜¯æ»šåŠ¨åŠ è½½ï¼Œè¿™ä¸ªå¯¹SPAæ¥è¯´æ¯”è¾ƒå‘ï¼Œæ¯æ¬¡å›é€€éƒ½å¾—æ»šåŠå¤©ï¼ŒF
 #SEO#
-ºó¶ËäÖÈ¾Ö÷Òª²»¾ÍÊÇÎªÁËSEOÃ´Ã´ßÕ£¬×¢ÒâÒ³ÃæÇĞ»»ÍÆ¹ã´úÂëµÄ±ä»¯
-#ÖØÒªµÄ¿ò¼Ü»òÀà¿â#
- - ºó¶ËäÖÈ¾ÒıÇæ [react-engine](https://github.com/paypal/react-engine)
- - Â·ÓÉ¹ÜÀí [react-router](https://github.com/rackt/react-router)
+åç«¯æ¸²æŸ“ä¸»è¦ä¸å°±æ˜¯ä¸ºäº†SEOä¹ˆä¹ˆå“’ï¼Œæ³¨æ„é¡µé¢åˆ‡æ¢æ¨å¹¿ä»£ç çš„å˜åŒ–
+#é‡è¦çš„æ¡†æ¶æˆ–ç±»åº“#
+ - åç«¯æ¸²æŸ“å¼•æ“ [react-engine](https://github.com/paypal/react-engine)
+ - è·¯ç”±ç®¡ç† [react-router](https://github.com/rackt/react-router)
