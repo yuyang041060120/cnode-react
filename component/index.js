@@ -3,6 +3,11 @@ var Router = require('react-router');
 var $ = require('jquery');
 var Routes = require('./routes.jsx');
 
+
+require('../public/css/font-awesome.min.css');
+require('../public/css/bootstrap.css');
+require('../public/css/style.css');
+
 var CLIENT_VARIABLENAME = '__REACT_ENGINE__';
 
 var _window;

@@ -9,7 +9,13 @@
     "type": "git",
     "url": "https://github.com/yuyang041060120/CNode-React"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7"
+  },
   "keywords": [
     "cnode",
     "react",
