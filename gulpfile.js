@@ -9,7 +9,7 @@ var gulp = require('gulp'),
 /**
  * webpack
  */
-gulp.task('webpack',['concat'],function(){
+gulp.task('webpack',function(){
     return gulp.src('./component/index.js')
             .pipe(webpack(webpackConfig))
             .pipe(gulp.dest('./public/build/'));
