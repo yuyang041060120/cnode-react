@@ -1,3 +1,5 @@
+> 很久没更新了，已经不兼容React和React-Router的主流版本，建议不要使用
+
 # CNode-React
 CNode React Server Render
 #概述#
