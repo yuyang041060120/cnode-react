@@ -1,32 +1,25 @@
-import express        from 'express';
-import bodyParser     from 'body-parser';
-import methodOverride from 'method-override';
-import cookieParser   from 'cookie-parser';
-import router         from 'express-mapping';
-import session        from 'express-session';
-import renderer       from 'react-engine';
-import filter         from './lib/filter';
+import path from 'path';
+import express from 'express';
+import ReactEngine from 'react-engine';
+
+import indexRouter from './lib/routes/index';
+import routes from './src/app/routes.jsx';
 
 const app = express();
 const PORT = 4000;
 
-const engine = renderer.server.create({
-    reactRoutes: `${__dirname}/component/routes.jsx`
+const engine = ReactEngine.server.create({
+    routes: routes,
+    routesFilePath: path.join(__dirname, '/src/app/routes.jsx')
 });
 
 app.engine('.jsx', engine);
-app.set('views', `${__dirname}/component/views`);
+app.set('views', path.join(__dirname, '/src/app/views'));
 app.set('view engine', 'jsx');
-app.set('view', renderer.expressView);
+app.set('view', require('react-engine/lib/expressView'));
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(methodOverride());
-app.use(cookieParser());
-app.use(express.static(`${__dirname}/public`));
-app.use(filter);
-app.use(router('routes'));
-
+app.use(express.static(path.join(__dirname, '/src')));
+app.use(indexRouter);
 app.listen(PORT, function () {
     console.log('The server is running at port:' + PORT);
 });

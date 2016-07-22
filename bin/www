@@ -1,4 +1,5 @@
-require('babel/register')({
-    extensions: [".es6", ".es", ".jsx", ".js"]
+require('babel-register')({
+  presets: ['es2015', 'react']
 });
+
 require('../app');
