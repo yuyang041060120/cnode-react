@@ -1,3 +1,7 @@
 body {
-    margin-top: 60px;
+  margin-top: 60px;
+}
+
+.container {
+  width: 960px;
 }

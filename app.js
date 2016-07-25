@@ -2,8 +2,8 @@ import path from 'path';
 import express from 'express';
 import ReactEngine from 'react-engine';
 
-import indexRouter from './lib/routes/index';
-import routes from './src/app/routes.jsx';
+import router from './lib/routes';
+import routes from './src/app/routes';
 
 const app = express();
 const PORT = 4000;
@@ -19,7 +19,7 @@ app.set('view engine', 'jsx');
 app.set('view', require('react-engine/lib/expressView'));
 
 app.use(express.static(path.join(__dirname, '/src')));
-app.use(indexRouter);
+app.use(router);
 app.listen(PORT, function () {
     console.log('The server is running at port:' + PORT);
 });
