@@ -2,7 +2,7 @@ import React from 'react';
 import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 
 import {Layout} from './views/layouts/default.jsx';
-import {Home} from './views/home';
+import {Home} from './views/home/home';
 import {Topic} from './views/topic';
 
 export default  (

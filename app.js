@@ -14,7 +14,6 @@ const engine = ReactEngine.server.create({
 });
 
 app.engine('.jsx', engine);
-app.set('views', path.join(__dirname, '/src/app/views'));
 app.set('view engine', 'jsx');
 app.set('view', require('react-engine/lib/expressView'));
 
