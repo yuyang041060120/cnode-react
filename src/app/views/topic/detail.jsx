@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-import { latestDate } from '../utils';
+import { latestDate } from '../../utils';
 
-export class Topic extends React.Component {
+export class TopicDetail extends React.Component {
     render() {
         var topic = this.props.data;
         var Label = null;
